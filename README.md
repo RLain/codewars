@@ -1,2 +1,2 @@
-# codewars
-Codewars kata training
+# 👾 codewars
+Codewars kata training: https://www.codewars.com/
