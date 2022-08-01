@@ -1,6 +1,7 @@
 /*📚 Additional Reading
  * https://www.omnicalculator.com/math/digital-root
  * https://brilliant.org/wiki/digital-root/
+ * https://medium.com/devsoonote/codewars-07-sum-of-digits-digital-root-7ca3aab2a2e9
  */
 const num = 4567;
 
