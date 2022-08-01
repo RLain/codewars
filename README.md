@@ -1,7 +1,6 @@
 # 👾 codewars
-Codewars kata training: 
 
-2022 Fun: Playing code wars 
+### 2022 Fun: Playing code wars 
 
 Started: July 2022
 
