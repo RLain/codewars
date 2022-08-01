@@ -1,0 +1,2 @@
+# codewars
+Codewars kata training
