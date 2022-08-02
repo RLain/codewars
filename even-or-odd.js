@@ -5,7 +5,7 @@ Odd numbers have a remainder > 0
 
 const number = -2131312311;
 
-/** Determines whether a positive or negative number is even or odd via modulus logic within simple conditional logic
+/** Determines whether a positive or negative number is even or odd via modulo logic within simple conditional logic
  * @param {integer} The number being checked
  * @returns {string} whether the number is even or odd
  */
@@ -31,7 +31,7 @@ console.log(checkNumbers);
 
 
 
-/** Determines whether a positive or negative number is even or odd via simplified modulus logic using ternary operator
+/** Determines whether a positive or negative number is even or odd via simplified modulo logic using ternary operator
  * @param {integer} The number being checked
  * @returns {string} whether the number is even or odd
  */
