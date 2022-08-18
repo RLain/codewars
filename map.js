@@ -87,6 +87,33 @@ const addColourToUsers = users.map( user => {
 })
 console.log(addColourToUsers)
 
+/* Output:
+
+[
+  {
+    name: 'Bruce',
+    surname: 'Wayne',
+    id: '82508d38-0a8d-40a0-b059-f5efa720fbe3',
+    favourite_hobby: 'martial_arts',
+    favourite_colour: 'yellow'
+  },
+  {
+    name: 'Gandalf',
+    surname: 'the White',
+    id: 'fafac5c9-d6d7-4edb-93b5-4687f56abbe3',
+    favourite_hobby: 'horseback_riding',
+    favourite_colour: 'yellow'
+  },
+  {
+    name: 'Harry',
+    surname: 'Potter',
+    id: '6a40d60a-0061-4200-a7e8-4a0e8e97bdbe',
+    favourite_hobby: 'beating_voldemort',
+    favourite_colour: 'yellow'
+  }
+]
+*/
+
 
 //💡 Tip: This can also be achieved using the forEach function. The key difference between .map() and .forEach() is that the former
 // doesn't mutate the array. The latter does. Note how we console.log the array's name 'users'.
