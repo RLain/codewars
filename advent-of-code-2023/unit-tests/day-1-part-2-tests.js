@@ -7,7 +7,7 @@ describe('Day 1 Part 2 Tests', () => {
   it('singleSimpleValue must return 54', () => {
     expect(executeLogic(singleSimpleValue)).to.equal(54);
   });
-  it.only('singleComplexValueWithMixed must return 54', () => {
+  it('singleComplexValueWithMixed must return 49', () => {
     expect(executeLogic(singleComplexValueWithMixed)).to.equal(49);
   });
 });

@@ -1018,23 +1018,27 @@ const stringToArray = (inputString) => {
 
 const findWords = (data) => {
   console.log('data', data);
+
   return data.map((num) => {
     const numbers = num.match(/\d+|[a-zA-Z]+/g) || [];
     console.log('numbers', numbers);
-    let outcomeArray = [];
-    return numbers.map((number) => {
+
+    let outcomeArray = numbers.map((number) => {
       const outcome = numberPairings[number.toLowerCase()] || NaN;
       console.log('outcome', outcome);
       if (Number.isNaN(outcome)) {
         console.log('hit here');
-        outcomeArray.push(Number(number));
+        return Number(number);
       } else {
         console.log('hit else');
-        outcomeArray.push(outcome);
+        return outcome;
       }
-      console.log('outcomeArray of findWords', outcomeArray);
-      return outcomeArray;
     });
+
+    console.log('outcomeArray of findWords', outcomeArray);
+
+    // Move join outside the inner map to combine all elements into a single string
+    return outcomeArray.join('');
   });
 };
 
@@ -1067,18 +1071,8 @@ const sumTheTwoDigitValues = (data) => {
 export const executeLogic = (data) => {
   console.log('data', data);
   const stringToArrayOutput = stringToArray(data);
-
-  // Convert numbers represented as characters to actual numbers using the hashmap
   const extractedWords = findWords(stringToArrayOutput);
-  console.log('extractedWords', extractedWords);
-
-  const extractedNumbers = findNumbers(stringToArrayOutput);
-
-  console.log('extractedNumbers', extractedNumbers);
-
+  const extractedNumbers = findNumbers(extractedWords);
   const twoDigitOutcome = createTwoDigitElements(extractedNumbers);
-
-  console.log('twoDigitOutcome', twoDigitOutcome);
-
   return sumTheTwoDigitValues(twoDigitOutcome);
 };
