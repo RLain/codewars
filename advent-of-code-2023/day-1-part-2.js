@@ -999,10 +999,6 @@
 // 3two3eightjszbfourkxbh5twonepr
 // 5cfprzgxtf3465five`;
 
-const rawData = `51591twosix4dhsxvgghxq
-425nine
-llvmhjtr8nbbhrfone`;
-
 const numberPairings = {
   zero: 0,
   one: 1,
@@ -1018,6 +1014,28 @@ const numberPairings = {
 
 const stringToArray = (inputString) => {
   return inputString.split('\n');
+};
+
+const findWords = (data) => {
+  console.log('data', data);
+  return data.map((num) => {
+    const numbers = num.match(/\d+|[a-zA-Z]+/g) || [];
+    console.log('numbers', numbers);
+    let outcomeArray = [];
+    return numbers.map((number) => {
+      const outcome = numberPairings[number.toLowerCase()] || NaN;
+      console.log('outcome', outcome);
+      if (Number.isNaN(outcome)) {
+        console.log('hit here');
+        outcomeArray.push(Number(number));
+      } else {
+        console.log('hit else');
+        outcomeArray.push(outcome);
+      }
+      console.log('outcomeArray of findWords', outcomeArray);
+      return outcomeArray;
+    });
+  });
 };
 
 const findNumbers = (data) => {
@@ -1047,30 +1065,20 @@ const sumTheTwoDigitValues = (data) => {
 };
 
 export const executeLogic = (data) => {
-  console.log('reached execute logic');
   console.log('data', data);
   const stringToArrayOutput = stringToArray(data);
 
   // Convert numbers represented as characters to actual numbers using the hashmap
-  const findWords = stringToArrayOutput.map((num) => {
-    const numbers = num.match(/\d+|[a-zA-Z]+/g) || [];
-    console.log(numbers);
-    if (isNaN(num)) {
-      // If it's not a pure number, convert it using the hashmap
-      return numberPairings[num.toLowerCase()] || NaN;
-    } else {
-      // If it's a pure number, parse it
-      return parseInt(num, 10);
-    }
-  });
+  const extractedWords = findWords(stringToArrayOutput);
+  console.log('extractedWords', extractedWords);
 
   const extractedNumbers = findNumbers(stringToArrayOutput);
 
-  console.log(findWords);
+  console.log('extractedNumbers', extractedNumbers);
 
   const twoDigitOutcome = createTwoDigitElements(extractedNumbers);
 
-  console.log(twoDigitOutcome);
+  console.log('twoDigitOutcome', twoDigitOutcome);
 
   return sumTheTwoDigitValues(twoDigitOutcome);
 };
