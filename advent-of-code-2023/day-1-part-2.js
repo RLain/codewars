@@ -1069,7 +1069,6 @@ const sumTheTwoDigitValues = (data) => {
 };
 
 export const executeLogic = (data) => {
-  console.log('data', data);
   const stringToArrayOutput = stringToArray(data);
   const extractedWords = findWords(stringToArrayOutput);
   const extractedNumbers = findNumbers(extractedWords);
