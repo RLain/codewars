@@ -1012,6 +1012,29 @@ const findNumbers = (data) => {
     numberArray.push(result);
   });
   console.log(numberArray);
+  return numberArray;
 };
 
-findNumbers(stringToArrayOutput);
+const extractedNumbers = findNumbers(stringToArrayOutput);
+
+const createTwoDigitElements = (data) => {
+  return data.map((item) => {
+    let result = item.slice(0, 1) + item.slice(-1);
+    return parseInt(result);
+  });
+};
+
+const twoDigitOutcome = createTwoDigitElements(extractedNumbers);
+
+console.log(twoDigitOutcome);
+
+const sumTheTwoDigitValues = (data) => {
+  let sum = 0;
+  for (let i = 0; i < data.length; i++) {
+    sum += data[i];
+  }
+  console.log(sum);
+  return sum;
+};
+
+sumTheTwoDigitValues(twoDigitOutcome);
