@@ -1,11 +1,16 @@
 {
   "name": "advent-of-code-2023",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "day-1.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha unit-tests/day-1-part-2-tests.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0"
+  }
 }
