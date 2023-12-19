@@ -1,4 +1,6 @@
-import { rawData } from './raw-data.js';
+// https://github.com/yolocheezwhiz/adventofcode/blob/main/2023/day01.js
+
+import { rawData } from '../raw-data.js';
 
 const inputs = rawData.trim().split('\n');
 
