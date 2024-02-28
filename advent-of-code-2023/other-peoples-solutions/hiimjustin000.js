@@ -19,12 +19,29 @@ let result = 0;
 for (const line of input) {
   const numbers = [];
   for (const [key, value] of Object.entries(numbersMap)) {
+    // Example: 425nine
     numbers.push(
       ...line.matchAll(new RegExp(key, 'g')),
       ...line.matchAll(new RegExp(value, 'g'))
     );
   }
+  console.log('log 1:', numbers);
+  // Example output
+  //   log 1: [
+  //     [ '2', index: 1, input: '425nine', groups: undefined ],
+  //     [ '4', index: 0, input: '425nine', groups: undefined ],
+  //     [ '5', index: 2, input: '425nine', groups: undefined ],
+  //     [ 'nine', index: 3, input: '425nine', groups: undefined ]
+  //   ]
   numbers.sort((a, b) => a.index - b.index);
+  console.log('log 2:', numbers);
+  // Example output
+  //   log 2: [
+  //     [ '4', index: 0, input: '425nine', groups: undefined ],
+  //     [ '2', index: 1, input: '425nine', groups: undefined ],
+  //     [ '5', index: 2, input: '425nine', groups: undefined ],
+  //     [ 'nine', index: 3, input: '425nine', groups: undefined ]
+  //   ]
 
   result += parseInt(
     `${
